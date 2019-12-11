@@ -1,0 +1,16 @@
+@(imageUrl: String, imagesData: List[PicsumImage])
+
+@main("Disneyland Paris - Java Technical Test") {
+  <h1>Welcome!</h1>
+  @if(imageUrl != null && !"".equals(imageUrl.trim())) {
+	  <h2>Simple Image<h2>
+	  <img src="@imageUrl" alt="Image from picsum" height="300" width="200">
+  }
+  
+  @if(imagesData != null && !imagesData.isEmpty()) {
+	  <h2>Multiple Images</h2>
+	  @for(imageData <- imagesData) {
+		<img src="@imageData.getDownloadUrl()" alt="@imageData.getAuthor()" height="300" width="200">
+	  }
+  }
+}

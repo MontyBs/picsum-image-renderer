@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Call of the view that will render a random image fetched from picsum with a configurable cache
+GET		/test						controllers.HomeController.test
+
+# Call of the view that will render list of images
+GET		/testMultiple				controllers.HomeController.testMultiple
